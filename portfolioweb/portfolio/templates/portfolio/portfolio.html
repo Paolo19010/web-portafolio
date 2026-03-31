@@ -1,0 +1,53 @@
+{%extends 'infoPersonal/base.html'%}
+
+{%block brand%}{{information.Name}}{%endblock%}
+{%block title%}Portfolio{%endblock%}
+{%block nameFooter%}{{information.Name}}{%endblock%}
+{%block titleFooter%}{{information.title}}{%endblock%}
+
+
+{%block background%}{%load static%}{% static 'core/img/portfolio-bg.jpg' %}{%endblock%}
+
+{%block header%}
+    <h1>Portafolio</h1>
+    <span class="subheading">Curriculo</span>
+{%endblock%}
+
+{%block content%}
+
+    {%for project in projects%}
+       
+    <div class="project-card mb-4">
+        <div class="row g-4 align-items-start">
+      
+          <!-- Imagen -->
+          <div class="col-12 col-md-4 col-lg-3">
+            <div class="project-logo">
+              <img class="img-fluid" src="{{ project.image.url }}" alt="{{ project.title }}" loading="lazy">
+            </div>
+          </div>
+      
+          <!-- Contenido -->
+          <div class="col-12 col-md-8 col-lg-9">
+            <h2 class="project-title mb-2">{{ project.title }}</h2>
+      
+            <div class="project-desc richtext">
+              {{ project.description|safe }}
+            </div>
+      
+            {% if project.link %}
+              <div class="mt-3">
+                <a href="{{ project.link }}" class="btn btn-outline-dark btn-sm" target="_blank" rel="noopener">
+                  Ver diagrama de flujo
+                </a>
+              </div>
+            {% endif %}
+          </div>
+      
+        </div>
+      </div>
+
+    {% endfor %}
+
+{%endblock%}
+

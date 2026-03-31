@@ -1,0 +1,28 @@
+{%extends 'infoPersonal/base.html'%}
+
+{%block brand%}{{information.Name}}{%endblock%}
+{%block title%}Contacto{%endblock%}
+{%block nameFooter%}{{information.Name}}{%endblock%}
+{%block titleFooter%}{{information.title}}{%endblock%}
+
+{% block background %}{{ background.contactImage.url }}{% endblock %}
+
+{%block header%}
+    <h1>Contacto</h1>
+    <span class="subheading">Asesoria</span>
+{%endblock%}
+
+{%block content%}
+
+
+        <div class="row">   
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <p>{{information.desc_contact}}</p>
+                <br>
+                <p><b>Teléfono:</b>{{information.cell}}</p>
+                <p><b>Email:</b>{{information.email}}</p>
+                <p><b>Honorarios:</b>{{information.honorarios}}</p>
+            </div>
+        </div>  
+
+{%endblock%}

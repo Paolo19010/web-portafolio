@@ -1,0 +1,91 @@
+
+.project-card{
+    width: 100%;
+    padding: 28px;
+    border-radius: 20px;
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,.06);
+    box-shadow: 0 15px 35px rgba(0,0,0,.05);
+    transition: all .35s cubic-bezier(.4,0,.2,1);
+  }
+  
+  .project-card:hover{
+    transform: translateY(-6px) scale(1.01);
+    box-shadow:
+      0 25px 50px rgba(0,0,0,.12),
+      0 10px 20px rgba(0, 0, 0, 0.631);
+  }
+  
+  .project-logo{
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #f6f6f6;
+  }
+  
+  .project-logo img{
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+  
+  .project-title{
+    font-size: 34px;
+    font-weight: 800;
+    line-height: 1.15;
+  }
+  
+  .richtext p{ margin-bottom: .6rem; }
+  .richtext ul{ padding-left: 1.2rem; margin-bottom: .6rem; }
+  .richtext strong{ font-weight: 800; }
+
+  /* ===== Responsive: Mobile ===== */
+@media (max-width: 576px) {
+    .project-card{
+      padding: 16px;              /* menos padding */
+      border-radius: 16px;
+    }
+  
+    .project-title{
+      font-size: 26px;            /* antes 34px */
+      line-height: 1.15;
+    }
+  
+    .project-logo{
+      border-radius: 14px;
+    }
+  
+    /* Si la imagen/logo es muy grande, limítala */
+    .project-logo img{
+      max-height: 160px;          /* controla la altura */
+      object-fit: contain;        /* para logos (no recorta) */
+      background: #f6f6f6;
+    }
+  
+    .richtext ul{
+      padding-left: 1.05rem;
+    }
+  
+    /* En mobile el hover no aplica igual: evita "saltos" */
+    .project-card:hover{
+      transform: none;
+      box-shadow: 0 15px 35px rgba(0,0,0,.06);
+    }
+  }
+  
+  /* ===== Responsive: Tablet (opcional) ===== */
+  @media (min-width: 577px) and (max-width: 992px) {
+    .project-title{
+      font-size: 30px;
+    }
+    .project-card{
+      padding: 22px;
+    }
+    .project-logo img{
+      max-height: 200px;
+      object-fit: contain;
+    }
+  }
+
+

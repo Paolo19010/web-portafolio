@@ -1,0 +1,17 @@
+{%extends 'infoPersonal/base.html'%}
+
+{%block brand%}{{information.Name}}{%endblock%}
+{%block title%}Portada{%endblock%}
+{%block nameFooter%}{{information.Name}}{%endblock%}
+{%block titleFooter%}{{information.title}}{%endblock%}
+{% block background %}{{ background.portadaImage.url }}{% endblock %}
+
+{%block header%}
+    
+        <h1>{{information.Name}}</h1>
+        <span class="subheading">{{information.title}}</span>
+ 
+{%endblock%}
+
+{%block content%}
+{%endblock%}
